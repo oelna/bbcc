@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="de" class="bbcc-2018 no-js">
+<head>
+	<meta charset="utf-8" />
+	<title>Big Band Chamber Concerts - Saison 2018/19</title>
+
+	<meta name="viewport" content="width=device-width" />
+	<!-- https://erikrunyon.com/2018/06/designing-web-content-for-watchos/ -->
+	<!--<meta name="disabled-adaptations" content="watch">-->
+	<link rel="icon" type="image/x-icon" href="http://bigbandchamberconcerts.de/2018/favicon.ico">
+	<meta property="og:title" content="Big Band Chamber Concerts" />
+	<meta property="og:image" content="http://bigbandchamberconcerts.de/2018/bbcc_preview.png" />
+
+	<style>
+		@layer global, theme;
+		@import url('../global.css') layer(global);
+		@import url('./2018.css') layer(theme);
+
+		:root {
+			--season-color-top: #A33E96;
+			--season-color-bottom: #CD2B90;
+		}
+	</style>
+
+	<script src="../global.js" type="module"></script><!-- module scripts are deferred by default -->
+	<script src="./2018.js" type="module"></script>
+</head>
+<body>
+
+	<div class="wrapper">
+		<header>
+			<span>Jochen Welsch präsentiert</span>
+			<span><img src="./bigband.svg" class="logo" alt="Big Band Chamber Concerts"></span>
+			<span>Chamber Concerts</span>
+		</header>
+
+		<main>
+			<p class="intro">Erleben Sie die ganze Wucht von sieben Bigbands in sieben Konzerten aus nächster Nähe, die Vielfalt und Besonderheiten ihrer spielenden und singenden Menschen, eingehegt in den zärtlichen Charme eines Séparées, wie man es in Mannheim nur ein Mal erleben kann … in der Klapsmühl’! <a href="#toggle" id="toggle-intro">mehr erfahren</a></p>
+
+			<div class="description hidden">
+				<p>Die Idee, große Bands in einem kleinen Klub auftreten zu lassen, erscheint auf den ersten Blick etwas irrig, ist jedoch nicht so abwegig, wie z.B. einen Elefanten mit einer Mücke kreuzen zu wollen.</p>
+
+				<p>Oftmals war Kurator Jochen Welsch selbst Band-Leader, wenn er mit Studierenden der Musikhochschule turnusgemäß zweimal im Jahr die akustischen Eigenheiten unseres Theaters auslotete. Die auf beiden Seiten - nämlich Bühne und Auditorium - prall gefüllte Klapsmühl’ erwies sich als Konzertsaal erster Güte mit urbanem Flair. Daraus entstand auch die Idee, Bigbands aus der Region eine Plattform zu geben und damit dem Publikum vor Ort die Möglichkeit zu bieten, einen solchen Makro-Kosmos mit all seinen Kleinst-Organismen unter die Hör-Lupe zu nehmen, ferner ganz und gar „nerdig“ die Bands miteinander in einer Abo-Reihe vergleichen zu können und den Begriff „regional“ weit zu denken.</p>
+
+				<p>Erleben Sie die ganze Vielfalt einer Musikanten-Szene, die oft genug am Rand der medialen Aufmerksamkeit ihr durchaus interessantes Werk betreibt, egal ob mit Profi-Musikern, als Jugend-Auswahl-Ensemble oder ambitionierten Amateuren.</p>
+
+				<p>Den Auftakt im Oktober bestreitet mit der Profi-Bigband Kicks’n Sticks das Flaggschiff der hiesigen Bigbands mit einem „Very Personal“-Programm, gefolgt von der Bigband der Städtischen Musikschule Mannheim - „Jazz4Fun“ unter der Leitung von Bernd Ballreich.</p>
+
+				<p>Die Bigband der Universität Mannheim wird gleich mit zwei unterschiedlichen Programmen - geleitet von Jochen Welsch - beim Publikum vorstellig. Bei einem davon wird der Singer&Songwriter Stefan Ebert mit seinen Stücken unter dem Motto „Getrennt oder zusammen - Kleinkunst trifft Big Band“ zu Gast sein. Mit der SRH Bigband und dem Rhein-Neckar Jazz Orchester haben wir zwei sehr interessante und bestens kultivierte Bands aus der Region eingeladen. SRH aus Heidelberg könnte durchaus auch für „Swings Really Hot“ stehen, während das RNJO unter dem Motto „Groove aus dem Delta“ als musikalische Botschafter des Rhein-Neckar-Kreises ein breites Spektrum zwischen Tradition und Moderne im Portfolio hat.</p>
+
+				<p>Das Jugendjazzorchster des Saarlandes unter der Leitung von Martin S. Schmitt - ein Auswahlorchester ersten Ranges - wird ein weiteres Schmankerl sein, das Sie sich nicht entgehen lassen sollten!</p>
+
+				<p>Erleben Sie die ganze Wucht von sieben Bigbands in sieben Konzerten aus nächster Nähe, die Vielfalt und Besonderheiten ihrer spielenden und singenden Menschen, eingehegt in den zärtlichen Charme eines Séparées, wie man es in Mannheim nur ein Mal erleben kann.</p>
+				<p><a href="#toggle" id="hide-extended-intro">Beschreibung ausblenden</a></p>
+			</div>
+
+			<dl class="termine">
+				<dt data-color="cd2c91">30.10.18</dt>
+				<dd>
+					<em>Bigband Kicks‘n Sticks</em>Das Jazzorchester der Metropolregion<br />„Very Personal” – Das Flaggschiff gibt sich die Ehre
+					<a href="#more" class="band-more">mehr</a>
+					<figure class="detail">
+						<img src="./termine_kicksnsticks.jpg" width="800" height="533" />
+						<figcaption>Band-Website: <a href="http://www.kicksnsticks.de" data-external="true">kicksnsticks.de</a><br />Bildrechte: P. Nimsky 2017</figcaption>
+					</figure>
+				</dd>
+
+				<dt data-color="a0188f">20.11.18</dt>
+				<dd>
+					<em>Jazz 4 Fun</em>Die Bigband der Städtischen Musikschule Mannheim.<br />Jazz von und für Jedermann.
+					<a href="#more" class="band-more">mehr</a>
+					<figure class="detail">
+						<img src="./termine_jazz4fun.jpg" width="800" height="533" />
+						<figcaption>Band-Website: <a href="http://www.mannheim.de/de/seiten?fulltext=Jazz4fun" data-external="true">www.mannheim.de/de/seiten?fulltext=Jazz4fun</a></figcaption>
+					</figure>
+				</dd>
+
+				<dt data-color="7b1d8e">04.12.18</dt>
+				<dd>
+					<em>College Jazz Orchestra</em>Die Bigband der Universität Mannheim.<br />Stets aufs Neue erfrischend anders.
+					<a href="#more" class="band-more">mehr</a>
+					<figure class="detail">
+						<img src="./termine_cjo.jpg" width="800" height="533" />
+						<figcaption>Band-Website: <a href="http://collegejazz.uni-mannheim.de" data-external="true">collegejazz.uni-mannheim.de</a><br />Bildrechte: F.ULL.IMAGE Photografie</figcaption>
+					</figure>
+				</dd>
+
+				<dt data-color="6c218e">15.01.19</dt>
+				<dd>
+					<em>Rhein-Neckar Jazz-Orchester</em>Aus Weinheim: Groove aus dem Delta mit den Jazz-Messengers des Rhein-Neckar-Kreises.
+					<a href="#more" class="band-more">mehr</a>
+					<figure class="detail">
+						<img src="./termine_rnjo.jpg" width="800" height="533" />
+						<figcaption>Band-Website: <a href="http://www.rnjo.de" data-external="true">www.rnjo.de</a></figcaption>
+					</figure>
+				</dd>
+
+				<dt data-color="51238d">19.02.19</dt>
+				<dd>
+					<em>Jugendjazzorchester Saar</em>Die Jazz-Talentschmiede von der Saar.
+					<a href="#more" class="band-more">mehr</a>
+					<figure class="detail">
+						<img src="./termine_josaar.jpg" width="800" height="533" />
+						<figcaption>Band-Website: <a href="http://www.jjos.de" data-external="true">www.jjos.de</a></figcaption>
+					</figure>
+				</dd>
+
+				<dt data-color="503095">19.03.19</dt>
+				<dd>
+					<em>SRH Bigband aus Heidelberg</em>„Swings Really Hot“
+					<a href="#more" class="band-more">mehr</a>
+					<figure class="detail">
+						<img src="./termine_srh.jpg" width="800" height="533" />
+						<figcaption>Band-Website: <a href="https://www.srh-bigband.de" data-external="true">www.srh-bigband.de</a></figcaption>
+					</figure>
+				</dd>
+
+				<dt data-color="342b87">02.04.19</dt>
+				<dd>
+					<em>Stefan Ebert und die Bigband der Universität&nbsp;Mannheim</em>„Getrennt oder zusammen“ – Kleinkunst trifft Big Band!
+					<a href="#more" class="band-more">mehr</a>
+					<figure class="detail">
+						<img src="./termine_stefanebert.jpg" width="800" height="533" />
+						<figcaption>Band-Website: <a href="http://www.stefan-ebert.de" data-external="true">www.stefan-ebert.de</a><br />Bildrechte: P. Nimsky 2017</figcaption>
+					</figure>
+				</dd>
+
+				<dt data-color="342b87"></dt><dd></dd>
+			</dl>
+
+			<section class="left">
+				<p>Klapsmühl’ am Rathaus<br />
+				D 6, 3<br />
+				68159 Mannheim</p>
+
+				<p>www.klapsmuehl.eu</p>
+
+				<hr data-color="342b87" />
+
+				<dl>
+					<dt>Einlass</dt><dd>19:30 Uhr</dd>
+					<dt>Konzertbeginn</dt><dd>20:00 Uhr</dd>
+				</dl>
+			</section>
+			<section class="right">
+				<p>Karten</p>
+
+				<dl>
+					<dt>Abendkasse</dt><dd>ab 18:30</dd>
+					<dt>Theaterkasse</dt><dd>Di-Sa 11:00–13:30</dd>
+					<dt>Telefonisch</dt><dd>0621-22488</dd>
+					<dt>Per E-Mail</dt><dd>info@klapsmuehl.eu</dd>
+				</dl>
+
+				<dl>
+					<dt>Eintrittspreise</dt><dd>€&thinsp;13 (€&thinsp;8 ermäßigt)</dd>
+				</dl>
+
+				<dl>
+					<dt>Abonnement</dt><dd>€&thinsp;63 (€&thinsp;49 ermäßigt)</dd>
+					<span>(nicht personengebunden)</span>
+				</dl>
+			</section>
+		</main>
+
+		<footer>
+			<nav class="season">
+				<p>Saison</p>
+
+				<ul>
+					<li><a href="../nav.html">Other Seasons</a></li>
+				</ul>
+			</nav>
+
+			<div class="meta">
+				<a href="../imprint.html">Impressum</a>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

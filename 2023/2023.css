@@ -1,0 +1,258 @@
+html {
+	font-size: 100%;
+	font-family: "BBCC", system-ui, Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 1.45;
+	background: black;
+	color: #fff;
+}
+
+body {
+	padding-bottom: 8rem;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	/* color: inherit; */
+}
+
+a[href^="tel"] { /* disable iOS data detector styling */
+	color: inherit;
+	text-decoration: none;
+}
+
+hr {
+	height: 0;
+	border: 0;
+	border-top: 3px solid #000;
+	transition: border-color 2s ease;
+}
+
+.hidden {
+	display: none;
+}
+
+.wrapper {
+	outline: 0px solid #f0f;
+	width: 97%;
+	max-width: 42em;
+	margin: 1em auto;
+}
+
+.wrapper header {
+}
+
+.wrapper header span {
+	display: block;
+	font-size: 1.4em;
+}
+
+.wrapper header .logo-container {
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr;
+
+	justify-items: stretch;
+	align-items: stretch;
+}
+
+.wrapper header .logo-bg {
+	grid-area: 1 / 1 / 2 / 2;
+	background: linear-gradient(#3a87ff, rgb(0, 60, 200) 50.01%, #ffc300 50%, #ff6200);
+	order: 1;
+
+	display: none;
+}
+
+.wrapper header .logo-bg-source {
+	display: none;
+}
+
+.wrapper header .safety {
+	grid-area: 1 / 1 / 2 / 2;
+	border: 1px solid black;
+	order: 2;
+	position: relative;
+	z-index: 1;
+
+	display: none;
+}
+
+.wrapper header .embed {
+	grid-area: 1 / 1 / 2 / 2;
+	order: 3;
+}
+
+.wrapper header img {
+	width: 100%;
+	height: auto;
+}
+
+.wrapper header .logo-bg video {
+	display: none;
+	background: green;
+	background-blend-mode: hard-light;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: relative;
+	z-index: 1;
+	/*-webkit-transform: translateZ(1px);
+	transform: translateZ(1px);*/
+	filter: invert(1);
+}
+
+.wrapper header canvas {
+	display: none;
+	width: 100%;
+	height: 100%;
+	mix-blend-mode: multiply;
+	filter: grayscale(100%) contrast(30%) brightness(2.0);
+	/* filter: invert(1) grayscale(100%) brightness(0.85) sepia(100%) hue-rotate(95deg); */
+}
+
+.wrapper header object {
+	display: block;
+	position: relative;
+	z-index: 3;
+}
+
+.wrapper header > span:nth-of-type(1) { text-transform: uppercase; text-align: center; letter-spacing: 0.2em; margin-bottom: 1em; }
+.wrapper header > span:nth-of-type(3) { text-transform: uppercase; text-align: center; letter-spacing: 0.2em; color: #ff6200; font-size: 2.4em; }
+
+.wrapper main {
+
+}
+
+.wrapper main p:first-of-type {
+	width: 100%;
+}
+
+.wrapper main .left {
+	grid-column-start: span 4;
+}
+
+.wrapper main .right {
+	grid-column-start: span 4;
+}
+
+.intro {
+	font-size: 1.5em;
+	margin-bottom: 1em;
+}
+
+.description {
+	font-size: 1.2em;
+}
+
+.termine {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 8rem repeat(3, 1fr);
+	border-bottom: 3px solid #000;
+	transition: border-color 2s ease;
+}
+
+.termine em {
+	display: block;
+	font-size: 1.5em;
+	font-style: normal;
+	cursor: pointer;
+}
+
+.termine em:hover {
+	text-decoration: underline;
+}
+
+.termine > * {
+	padding-top: 0.5rem;
+	margin-bottom: 1rem;
+	border-top: 3px solid #000;
+	transition: border-color 2s ease;
+}
+
+.termine > .date {
+	grid-column-start: span 1;
+	font-size: 1.5em;
+	padding-right: 1rem;
+}
+
+.termine > .info {
+	grid-column-start: span 3;
+	margin-left: 0;
+}
+
+.termine .band-more {
+	-webkit-appearance: none;
+	appearance: none;
+	font-size: 1rem;
+	font-family: inherit;
+	font-weight: 650;
+	border: 0;
+	text-decoration: none;
+	background: #fff;
+	padding: 0.3em 0.6em;
+	color: #000;
+	margin: 0 0 0 0.25em;
+	float: right;
+	cursor: pointer;
+}
+
+.termine .band-more:hover,
+.termine .band-more:focus { background-color: #ddd; }
+
+.termine .detail {
+	display: none;
+	margin: 0;
+	margin-top: 1em;
+	outline: 0px solid #f0f;
+}
+
+.termine .detail.open {
+	display: block;
+}
+
+.termine .detail figcaption {
+	padding: 0.5em 0;
+}
+
+.left dl,
+.right dl {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.left dt,
+.left dd,
+.right dt,
+.right dd {
+	width: 50%;
+	margin-left: 0;
+}
+
+@media only screen and (min-width: 45em) {
+	.wrapper {
+		width: 80%;
+	}
+
+	.wrapper main {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.wrapper main .left {
+		grid-column-start: span 2;
+		padding-right: 1em;
+	}
+
+	.wrapper main .right {
+		grid-column-start: span 2;
+		padding-left: 1em;
+	}
+}

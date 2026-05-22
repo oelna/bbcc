@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 255 218" xml:space="preserve">
+<style type="text/css">
+	:root {
+		--top-color: #ffffff;
+		--bottom-color: #cccccc;
+	}
+	@keyframes flicker-old {
+		0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+			opacity: .99;
+		}
+		20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+			opacity: 0.4;
+		}
+	}
+	@keyframes flicker { /* mmamammmmammamamaaamammma */
+		0%, 20% {
+			opacity: 0.4;
+		}
+		22%, 22.999% {
+			opacity: 0.99;
+		}
+		23%, 25% {
+			opacity: 0.4;
+		}
+		26%, 29% {
+			opacity: 0.7;
+		}
+		30%, 100% {
+			opacity: 0.99;
+		}
+	}
+
+	.bg { fill: #000; display: none; }
+
+	.top .letter { fill:var(--top-color); }
+	.bottom .letter { fill:var(--bottom-color); }
+	
+	.letter {
+		opacity: 0.4;
+		animation: flicker 3s linear forwards;
+		animation-delay: 1.3s;
+	}
+
+	.letter-1 { animation-delay: 1.3s; }
+	.letter-2 { animation-delay: 1.4s; }
+	.letter-3 { animation-delay: 0.7s; }
+	.letter-4 { animation-delay: 1.7s; }
+	.letter-5 { animation-delay: 1.5s; }
+	.letter-6 { animation-delay: 4.8s; }
+	.letter-7 { animation-delay: 1.6s; }
+
+</style>
+<script type="text/javascript">
+	window.addEventListener('load', function() {
+		const root = document.documentElement;
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+		
+		if (urlParams.get('color1')) {
+			root.style.setProperty('--top-color', '#'+urlParams.get('color1'));
+		}
+
+		if (urlParams.get('color2')) {
+			root.style.setProperty('--bottom-color', '#'+urlParams.get('color2'));
+		}
+
+		// random timing for flicker animation
+		const letters = document.querySelectorAll('.letter-1, .letter-2, .letter-3, .letter-4, .letter-5, .letter-7').forEach(function (ele, i) {
+			const rndValue = (1 + Math.random()).toFixed(1);
+			ele.style.animationDelay = rndValue + 's';
+		});
+
+	},false);
+</script>
+<g class="all">
+	<rect class="bg" x="0" y="0" width="255" height="218"></rect>
+	
+	<g class="top">
+		<path class="letter letter-1" d="M0,108V0h100.8v44.2c0,3.9-0.9,7.4-2.7,10.5c-1.8,3.1-4.2,5.5-7.4,7.3c-3.2,1.8-6.8,2.7-10.9,2.7H47.2V52.7h3
+		c0.9,0,1.3-0.7,1.3-2v-31h-2.3v68.4h1c0.5,0,0.8-0.2,1-0.7c0.2-0.5,0.3-1.1,0.3-1.7V71.4H39.2V60.2h61.6v26.6c0,6.3-1.9,11.4-5.6,15.3c-3.7,3.9-9.1,5.8-16,5.8H0z"/>
+		<rect x="102.9" class="letter letter-2" width="49.2" height="108"/>
+		<path class="letter letter-3" d="M154.3,108V21.2c0-6.3,1.9-11.4,5.6-15.3c3.7-3.9,9-5.8,15.8-5.8h79.4v21h-49.3c-0.8,0-1.3,0.3-1.7,0.8
+		c-0.4,0.5-0.6,1.1-0.6,1.8v63.9h2.3V43.8V23.3h49.3V108H154.3z"/>
+	</g>
+	<g class="bottom">
+		<path class="letter letter-4" d="M0,218V110h62.1V155c0,3.9-0.9,7.4-2.7,10.5c-1.8,3.1-4.2,5.5-7.4,7.3c-3.2,1.8-6.8,2.7-10.9,2.7H27.8v-12.4h3
+		c0.9,0,1.3-0.7,1.3-2V129h-2.3v69.8h1c0.5,0,0.8-0.2,1-0.7c0.2-0.5,0.3-1.1,0.3-1.7v-14.5H19.7v-11.5h42.3v26.5c0,6.3-1.9,11.4-5.6,15.3c-3.7,3.9-9.1,5.8-16,5.8H0z" />
+		<path class="letter letter-5" d="M94,129.2h2.3v47.9H94V129.2z M64.2,110v108H94v-21.6h2.3V218h29.9V110H64.2z" />
+		<polygon class="letter letter-6" points="128.6,110 128.6,218 158.4,218 158.4,129.2 160.7,129.2 160.7,218 190.6,218 190.6,110 "/>
+		<path class="letter letter-7" d="M225,129.2h-2.3v69.5h1.3c0.3,0,0.5-0.2,0.7-0.6c0.2-0.4,0.3-0.9,0.3-1.4V129.2z M192.9,218V110h62.2v87.2
+		c0,3.8-0.9,7.3-2.7,10.5c-1.8,3.2-4.3,5.7-7.5,7.5c-3.2,1.8-6.8,2.7-10.9,2.7H192.9z"/>
+	</g>
+</g>
+</svg>

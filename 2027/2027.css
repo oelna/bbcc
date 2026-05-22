@@ -1,0 +1,285 @@
+
+:root {
+	/* SEASON COLORS ARE SET IN index.html  */
+	/*
+	--season-color-top
+	--season-color-bottom
+	*/
+}
+
+@keyframes termin-show {
+	from {
+		opacity: 0;
+		transform: translateX(-30%);
+	}
+
+	35% {
+		opacity: 1;
+		border-color: rgb(0 0 0 / 0.0);
+		transform: translateX(0%);
+	}
+
+	to {
+		opacity: 1;
+		border-color: color-mix(in srgb, var(--accent) 100%, transparent 0%);
+		transform: translateX(0%);
+	}
+}
+
+html {
+	font-size: 100%;
+	font-family: "BBCC", system-ui, Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 1.45;
+	background: black;
+	color: #fff;
+}
+
+.wrapper {
+	border: 0px solid #f0f;
+	/*
+	width: 97%;
+	max-width: 42em;
+	*/
+	width: 100%;
+	max-width: none;
+	margin: 0 auto 8rem;
+
+	display: grid;
+	gap: 0.5rem;
+	grid-template-columns: 1fr min(97%, 42em) 1fr;
+
+	& > * { outline: 0px solid red; }
+
+	header {
+		grid-column: 1 / 4;
+
+		display: grid;
+		grid-template-columns: subgrid;
+
+		& > span { display: block; }
+
+		.intro {
+			grid-column: 2 / 3;
+			grid-row-start: 1;
+			z-index: 5;
+			margin-block-start: 2rem;
+
+			align-self: self-start; /* don't prevent clicking on background */
+			text-transform: uppercase; 
+			text-align: center; 
+			letter-spacing: 0.2em; 
+			margin-block-start: 2rem;
+		}
+
+		.logo-container {
+			grid-column: 1 / 4;
+			grid-row: 1 / 3;
+			z-index: 1;
+			max-height: 65vh;
+		}
+
+		.logo-container #canvas {
+			width: 100%;
+			height: 100%;
+		}
+
+		.logo-container canvas {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+
+		.subtitle {
+			grid-column: 2 / 3;
+			grid-row-start: 3;
+
+			text-transform: uppercase;
+			text-align: center;
+			letter-spacing: 0.2em;
+			color: var(--season-color-bottom); 
+			font-size: 2.4em;
+			line-height: 1.1;
+			margin-block-start: 0;
+		}
+	}
+
+	main {
+		grid-column: 2 / 3;
+
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+
+		.intro {
+			font-size: 1.5rem;
+			margin-block: 1rem;
+			grid-column: 1 / 3;
+		}
+
+		.intro[open] .fake-button {
+			display: none;
+		}
+
+		.description {
+			font-size: 1.2em;
+		}
+
+		.termine { grid-column: 1 / 3; }
+
+		.termine .termin {
+			width: 100%;
+			outline: 0px solid #00f;
+
+			padding-block-start: 0.5rem;
+			margin-block-end: 1rem;
+			border-block-start: 3px solid var(--accent);
+
+			/* only if timeline API is supported */
+			@supports (animation-timeline: view()) {
+
+				/* only if user doesn't have motion sickness preference set */
+				@media (prefers-reduced-motion: no-preference) {
+					opacity: 0;
+					border-block-start-color: transparent;
+					/* transition: border-color 2s ease; */
+
+					animation: 3s cubic-bezier(0, 0.68, 0.73, 1.01) forwards termin-show;
+					animation-delay: 1s;
+					animation-timeline: view();
+	    			/* animation-range: entry; */
+				    animation-range-start: cover 5%;
+	    			animation-range-end: cover 40%;
+    			}
+			}
+
+			--animation-delay-factor: 0s;
+
+			/* set a nice delay for each item */
+			&:nth-child(1) { animation-delay: calc(1 * var(--animation-delay-factor)); }
+			&:nth-child(2) { animation-delay: calc(2 * var(--animation-delay-factor)); }
+			&:nth-child(3) { animation-delay: calc(3 * var(--animation-delay-factor)); }
+			&:nth-child(4) { animation-delay: calc(4 * var(--animation-delay-factor)); }
+			&:nth-child(5) { animation-delay: calc(5 * var(--animation-delay-factor)); }
+			&:nth-child(6) { animation-delay: calc(6 * var(--animation-delay-factor)); }
+			&:nth-child(7) { animation-delay: calc(7 * var(--animation-delay-factor)); }
+			&:nth-child(8) { animation-delay: calc(8 * var(--animation-delay-factor)); }
+
+			/* generate nice color hues for each item and assign them to a variable used in the animation */
+			&:nth-child(1) { --accent: color-mix(in oklch, var(--season-color-top) 0%, var(--season-color-bottom)); }
+			&:nth-child(2) { --accent: color-mix(in oklch, var(--season-color-top) 15%, var(--season-color-bottom)); }
+			&:nth-child(3) { --accent: color-mix(in oklch, var(--season-color-top) 30%, var(--season-color-bottom)); }
+			&:nth-child(4) { --accent: color-mix(in oklch, var(--season-color-top) 45%, var(--season-color-bottom)); }
+			&:nth-child(5) { --accent: color-mix(in oklch, var(--season-color-top) 60%, var(--season-color-bottom)); }
+			&:nth-child(6) { --accent: color-mix(in oklch, var(--season-color-top) 75%, var(--season-color-bottom)); }
+			&:nth-child(7) { --accent: color-mix(in oklch, var(--season-color-top) 90%, var(--season-color-bottom)); }
+			&:nth-child(8) { --accent: color-mix(in oklch, var(--season-color-top) 100%, var(--season-color-bottom)); }
+		}
+
+		.termine .termin :is(summary, .detail) {
+			display: grid;
+			grid-template-columns: 8rem 1fr 4rem;
+		}
+
+		.termin summary {
+			font-size: 1.5rem;
+		}
+
+		.termin h2 {
+			font-size: 1.5rem;
+			font-weight: normal;
+			font-style: normal;
+			cursor: pointer;
+			margin: 0;
+		}
+
+		.termin h2:hover {
+			text-decoration: underline;
+		}
+
+		.termin h2 span { /* subtitle  */
+			font-size: 1rem;
+			display: block;
+			text-decoration: none !important;
+		}
+
+		.termin h2:hover span {
+			
+		}
+
+		.termin.disabled :is(summary, .detail) {
+			color: color-mix(in srgb, currentColor 30%, black);
+		}
+
+		.termin .disabled h2::after {
+			display: inline-block;
+			content: 'Entfällt leider!';
+			background: #ff6f6f;
+			color: #fff;
+			font-size: 0.9rem;
+			text-transform: uppercase;
+			border-radius: 0.2em;
+			padding: 0.1em 0.4em;
+			margin-inline-start: 0.5em;
+			vertical-align: 20%;
+		}
+
+		.termin button,
+		.fake-button {
+			-webkit-appearance: none;
+			appearance: none;
+			font-size: 1rem;
+			font-family: inherit;
+			font-weight: 650;
+			border: 0;
+			text-decoration: none;
+			background: #fff;
+			padding: 0.3em 0.6em;
+			color: #000;
+			margin: 0 0 0 0.25em;
+			cursor: pointer;
+		}
+
+		.termin button:hover,
+		.termin button:focus { background-color: #ddd; }
+
+		.termin .detail /* figure element */ {
+			margin: 0;
+			margin-top: 1rem;
+			font-size: 1rem;
+			outline: 0px solid #0f0;
+		}
+
+		.termin[open] .fake-button {
+			opacity: 0.3;
+		}
+
+		.termin .detail picture {
+			grid-column: 1 / 4;
+		}
+
+		.termin .detail figcaption {
+			grid-column: 1 / 4;
+			padding: 0.5em 0;
+		}
+
+		.left dl,
+		.right dl {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.left dt,
+		.left dd,
+		.right dt,
+		.right dd {
+			width: 50%;
+			margin-left: 0;
+		}
+	}
+
+	footer {
+		grid-column: 2 / 3;
+	}
+}

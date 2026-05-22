@@ -1,0 +1,236 @@
+::selection {
+	color: #000;
+	background: #2cf472;
+}
+
+html {
+	font-size: 100%;
+	font-family: "BBCC", -system-ui, Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 1.45;
+	background: black;
+	color: #fff;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	/* color: inherit; */
+}
+
+a[href^="tel"] { /* disable iOS data detector styling */
+	color: inherit;
+	text-decoration: none;
+}
+
+hr {
+	height: 0;
+	border: 0;
+	border-top: 3px solid #000;
+	transition: border-color 2s ease;
+}
+
+.hidden {
+	display: none;
+}
+
+.wrapper {
+	outline: 0px solid #f0f;
+	width: 97%;
+	max-width: 42em;
+	margin: 1em auto;
+}
+
+.wrapper header {
+}
+
+.wrapper header span {
+	display: block;
+	font-size: 1.4em;
+}
+
+.wrapper header img {
+	width: 100%;
+	height: auto;
+}
+
+.wrapper header .logo { /* svg object */
+	width: 100%;
+	height: auto;
+	aspect-ratio: 255 / 218;
+}
+
+.wrapper header span:nth-child(1) { text-transform: uppercase; text-align: center; letter-spacing: 0.2em; margin-bottom: 1em; }
+.wrapper header span:nth-child(3) { text-transform: uppercase; text-align: center; letter-spacing: 0.2em; color: hsl(140, 70%, 30%); font-size: 2.4em; }
+
+.wrapper main {
+
+}
+
+.wrapper main p:first-of-type {
+	width: 100%;
+}
+
+.wrapper main .left {
+
+}
+
+.wrapper main .right {
+
+}
+
+.intro {
+	font-size: 1.5em;
+	margin-bottom: 1em;
+}
+
+.description {
+	font-size: 1.2em;
+}
+
+.termine {
+	display: flex;
+	flex-wrap: wrap;
+	border-bottom: 3px solid #000;
+	transition: border-color 2s ease;
+}
+
+.termine em {
+	display: block;
+	font-size: 1.5em;
+	font-style: normal;
+	cursor: pointer;
+}
+
+.termine em:hover {
+	text-decoration: underline;
+}
+
+.termine dt,
+.termine dd {
+	padding-top: 0.5rem;
+	margin-bottom: 1rem;
+	border-top: 3px solid #000;
+	transition: border-color 2s ease;
+}
+
+.termine dt {
+	font-size: 1.5em;
+	width: 8rem;
+	padding-right: 1rem;
+}
+
+.termine dd {
+	width: calc(100% - 9rem);
+	margin-left: 0;
+}
+
+.termine .band-more {
+	text-decoration: none;
+	background: #fff;
+	font-weight: 650;
+	padding: 0.2em 0.4em;
+	color: #000;
+	margin-left: 0.25em;
+	float: right;
+}
+
+.termine .band-more .arrow {
+	transform: rotate(0deg);
+	vertical-align: -0.15em;
+	transition: transform 0.23s ease;
+}
+
+.termine .band-more .arrow.open {
+	transform: rotate(90deg);
+}
+
+.termine .detail {
+	display: none;
+	margin: 0;
+	margin-top: 1em;
+	outline: 0px solid #f0f;
+}
+
+.termine .detail.open {
+	display: block;
+}
+
+.termine dd:nth-of-type(1) .detail img {
+	-webkit-filter:	grayscale(100%) brightness(60%) sepia(100%) hue-rotate(8deg) saturate(800%) contrast(1.0);
+	filter:			grayscale(100%) brightness(60%) sepia(100%) hue-rotate(8deg) saturate(800%) contrast(1.0);
+}
+
+.termine dd:nth-of-type(2) .detail img {
+	-webkit-filter:	grayscale(100%) brightness(60%) sepia(100%) hue-rotate(0deg) saturate(800%) contrast(1.0);
+	filter:			grayscale(100%) brightness(60%) sepia(100%) hue-rotate(0deg) saturate(800%) contrast(1.0);
+}
+
+.termine dd:nth-of-type(3) .detail img {
+	-webkit-filter:	grayscale(100%) brightness(60%) sepia(100%) hue-rotate(-5deg) saturate(800%) contrast(1.0);
+	filter:			grayscale(100%) brightness(60%) sepia(100%) hue-rotate(-5deg) saturate(800%) contrast(1.0);
+}
+
+.termine dd:nth-of-type(4) .detail img {
+	-webkit-filter:	grayscale(100%) brightness(60%) sepia(100%) hue-rotate(-15deg) saturate(800%) contrast(1.0);
+	filter:			grayscale(100%) brightness(60%) sepia(100%) hue-rotate(-15deg) saturate(800%) contrast(1.0);
+}
+
+.termine dd:nth-of-type(5) .detail img {
+	-webkit-filter:	grayscale(100%) brightness(60%) sepia(100%) hue-rotate(-25deg) saturate(800%) contrast(1.0);
+	filter:			grayscale(100%) brightness(60%) sepia(100%) hue-rotate(-25deg) saturate(800%) contrast(1.0);
+}
+
+.termine dd:nth-of-type(6) .detail img {
+	-webkit-filter:	grayscale(100%) brightness(60%) sepia(100%) hue-rotate(-35deg) saturate(800%) contrast(1.0);
+	filter:			grayscale(100%) brightness(60%) sepia(100%) hue-rotate(-35deg) saturate(800%) contrast(1.0);
+}
+
+.termine dd:nth-of-type(7) .detail img {
+	-webkit-filter:	grayscale(100%) brightness(60%) sepia(100%) hue-rotate(-45deg) saturate(800%) contrast(1.0);
+	filter:			grayscale(100%) brightness(60%) sepia(100%) hue-rotate(-45deg) saturate(800%) contrast(1.0);
+}
+
+.termine .detail figcaption {
+	padding: 0.5em 0;
+}
+
+.left dl,
+.right dl {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.left dt,
+.left dd,
+.right dt,
+.right dd {
+	width: 50%;
+	margin-left: 0;
+}
+
+@media only screen and (min-width: 45em) {
+	.wrapper {
+		width: 80%;
+	}
+
+	.wrapper main {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.wrapper main .left {
+		width: calc(50% - 1em);
+		padding-right: 1em;
+	}
+
+	.wrapper main .right {
+		width: calc(50% - 1em);
+		padding-left: 1em;
+	}
+}
