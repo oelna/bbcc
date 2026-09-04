@@ -127,7 +127,8 @@ function buildSinglePathSvgMarkup(sourceSvgEl, pathEl) {
 }
 
 function getLetterColor(pathEl, fallbackColor) {
-	const fill = pathEl.getAttribute("fill");
+	// const fill = pathEl.getAttribute("fill"); // attribute value in HTML
+	const fill = window.getComputedStyle(pathEl).getPropertyValue('fill'); // CSS calculated color!
 	if (fill) {
 		return fill;
 	}

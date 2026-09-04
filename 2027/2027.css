@@ -36,6 +36,10 @@ html {
 	color: #fff;
 }
 
+/* set SVG letter colors from variables */
+#letters svg .color-1 {	fill: var(--season-color-top); }
+#letters svg .color-2 {	fill: var(--season-color-bottom); }
+
 .wrapper {
 	border: 0px solid #f0f;
 	/*
@@ -44,16 +48,21 @@ html {
 	*/
 	width: 100%;
 	max-width: none;
+
+	--logo-dynamic-height: min(98vw, 50vh);
+
 	margin: 0 auto 8rem;
 
 	display: grid;
 	gap: 0.5rem;
 	grid-template-columns: 1fr min(97%, 42em) 1fr;
+	grid-template-rows: var(--logo-dynamic-height) auto auto;
 
 	& > * { outline: 0px solid red; }
 
 	header {
 		grid-column: 1 / 4;
+		grid-row: 1 / 2;
 
 		display: grid;
 		grid-template-columns: subgrid;
@@ -64,7 +73,6 @@ html {
 			grid-column: 2 / 3;
 			grid-row-start: 1;
 			z-index: 5;
-			margin-block-start: 2rem;
 
 			align-self: self-start; /* don't prevent clicking on background */
 			text-transform: uppercase; 
@@ -88,7 +96,7 @@ html {
 		.logo-container canvas {
 			display: block;
 			width: 100%;
-			height: auto;
+			height: 100%;
 		}
 
 		.subtitle {
@@ -107,6 +115,7 @@ html {
 
 	main {
 		grid-column: 2 / 3;
+		grid-row: 2 / 3;
 
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -281,5 +290,6 @@ html {
 
 	footer {
 		grid-column: 2 / 3;
+		grid-row: 3 / 4;
 	}
 }
