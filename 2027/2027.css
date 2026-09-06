@@ -145,11 +145,30 @@ html {
 			margin-block-end: 1rem;
 			border-block-start: 3px solid var(--accent);
 
-			/* only if timeline API is supported */
-			@supports (animation-timeline: view()) {
+			interpolate-size: allow-keywords; /* allow toggle animation */
 
-				/* only if user doesn't have motion sickness preference set */
-				@media (prefers-reduced-motion: no-preference) {
+			/* only if user doesn't have motion sickness preference set */
+			@media (prefers-reduced-motion: no-preference) {
+
+				/* animate opening and closing */
+				&::details-content {
+					height: 0;
+					opacity: 0;
+					overflow: clip;
+
+					transition:
+					height 600ms ease,
+					opacity 600ms ease,
+					content-visibility 600ms allow-discrete;
+				}
+
+				&[open]::details-content {
+					height: auto;
+					opacity: 1;
+				}
+
+				/* animate on scroll, only if timeline API is supported */
+				@supports (animation-timeline: view()) {
 					opacity: 0;
 					border-block-start-color: transparent;
 					/* transition: border-color 2s ease; */
@@ -157,10 +176,10 @@ html {
 					animation: 3s cubic-bezier(0, 0.68, 0.73, 1.01) forwards termin-show;
 					animation-delay: 1s;
 					animation-timeline: view();
-	    			/* animation-range: entry; */
-				    animation-range-start: cover 5%;
-	    			animation-range-end: cover 40%;
-    			}
+					/* animation-range: entry; */
+					animation-range-start: cover 5%;
+					animation-range-end: cover 40%;
+				}
 			}
 
 			--animation-delay-factor: 0s;
@@ -176,14 +195,14 @@ html {
 			&:nth-child(8) { animation-delay: calc(8 * var(--animation-delay-factor)); }
 
 			/* generate nice color hues for each item and assign them to a variable used in the animation */
-			&:nth-child(1) { --accent: color-mix(in oklch, var(--season-color-top) 0%, var(--season-color-bottom)); }
-			&:nth-child(2) { --accent: color-mix(in oklch, var(--season-color-top) 15%, var(--season-color-bottom)); }
-			&:nth-child(3) { --accent: color-mix(in oklch, var(--season-color-top) 30%, var(--season-color-bottom)); }
-			&:nth-child(4) { --accent: color-mix(in oklch, var(--season-color-top) 45%, var(--season-color-bottom)); }
-			&:nth-child(5) { --accent: color-mix(in oklch, var(--season-color-top) 60%, var(--season-color-bottom)); }
-			&:nth-child(6) { --accent: color-mix(in oklch, var(--season-color-top) 75%, var(--season-color-bottom)); }
-			&:nth-child(7) { --accent: color-mix(in oklch, var(--season-color-top) 90%, var(--season-color-bottom)); }
-			&:nth-child(8) { --accent: color-mix(in oklch, var(--season-color-top) 100%, var(--season-color-bottom)); }
+			&:nth-child(1) { --accent: color-mix(in oklch, var(--season-color-bottom) 0%, var(--season-color-top)); }
+			&:nth-child(2) { --accent: color-mix(in oklch, var(--season-color-bottom) 15%, var(--season-color-top)); }
+			&:nth-child(3) { --accent: color-mix(in oklch, var(--season-color-bottom) 30%, var(--season-color-top)); }
+			&:nth-child(4) { --accent: color-mix(in oklch, var(--season-color-bottom) 45%, var(--season-color-top)); }
+			&:nth-child(5) { --accent: color-mix(in oklch, var(--season-color-bottom) 60%, var(--season-color-top)); }
+			&:nth-child(6) { --accent: color-mix(in oklch, var(--season-color-bottom) 75%, var(--season-color-top)); }
+			&:nth-child(7) { --accent: color-mix(in oklch, var(--season-color-bottom) 90%, var(--season-color-top)); }
+			&:nth-child(8) { --accent: color-mix(in oklch, var(--season-color-bottom) 100%, var(--season-color-top)); }
 		}
 
 		.termine .termin :is(summary, .detail) {
