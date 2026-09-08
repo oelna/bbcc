@@ -121,6 +121,8 @@ html {
 		grid-template-columns: 1fr 1fr;
 		gap: 1rem;
 
+		padding-block-start: 15vw;
+
 		.intro {
 			font-size: 1.5rem;
 			margin-block: 1rem;
